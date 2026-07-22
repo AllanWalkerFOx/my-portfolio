@@ -8,7 +8,7 @@ export default function HeroBento() {
   const [copied, setCopied] = useState(false)
   const [terminalText, setTerminalText] = useState('')
   
-  const welcomeMessage = "Je vous souhaite une excellente visite sur mon portfolio."
+  const welcomeMessage = "Je vous souhaite une excellente visite sur mon portfolio. Portfolio de Tonni-Allan"
 
   useEffect(() => {
     let index = 0
