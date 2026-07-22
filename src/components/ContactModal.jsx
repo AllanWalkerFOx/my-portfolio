@@ -216,7 +216,7 @@ export default function ContactModal({ isOpen, onClose }) {
                 <div className="pt-4 border-t border-white/10">
                   <div className="mb-3">
                     <h4 className="text-xs sm:text-sm font-bold text-white flex items-center gap-2">
-                      <MessageSquare size={16} className="text-indigo-400" /> Écris-moi un message
+                      <MessageSquare size={16} className="text-indigo-400" /> Écrivez-moi un message. Elle me sera reçu par e-mail et je vous répondrai dans les plus brefs délais.
                     </h4>
                   </div>
 

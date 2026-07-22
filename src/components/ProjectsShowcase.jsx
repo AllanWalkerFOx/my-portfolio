@@ -67,7 +67,7 @@ export default function ProjectsShowcase() {
             <Sparkles size={14} /> Réalisations & Projets
           </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
-            Des projets faits <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400">sans concession</span>.
+            Mes projets professionnel <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400">et personnel</span>.
           </h2>
         </div>
         <p className="text-gray-400 text-sm max-w-md">
