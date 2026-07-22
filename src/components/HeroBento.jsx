@@ -54,7 +54,7 @@ export default function HeroBento() {
             <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
               <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold">
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                Available for hire
+                Débutant mais passionné, ça fait la différence !
               </span>
 
               <div className="flex items-center gap-2 text-xs font-mono text-gray-400">

@@ -22,7 +22,6 @@ export default function CodeBackground() {
     const drops = Array(columns).fill(1)
 
     const draw = () => {
-      // Effet d'estompage progressif
       ctx.fillStyle = 'rgba(9, 10, 15, 0.12)'
       ctx.fillRect(0, 0, canvas.width, canvas.height)
 
@@ -31,7 +30,6 @@ export default function CodeBackground() {
       for (let i = 0; i < drops.length; i++) {
         const text = characters.charAt(Math.floor(Math.random() * characters.length))
         
-        // Couleur alternée indigo / violet / émeraude
         if (i % 5 === 0) {
           ctx.fillStyle = '#818cf8' // Indigo vif
         } else if (i % 3 === 0) {
