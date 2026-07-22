@@ -1,7 +1,7 @@
 import React from 'react'
 import CodeBackground from './components/CodeBackground'
 import HeroBento from './components/HeroBento'
-import ProjectsBento from './components/ProjectsBento'
+import ProjectsShowcase from './components/ProjectsShowcase'
 import ContactSection from './components/ContactSection'
 
 export default function App() {
@@ -13,13 +13,13 @@ export default function App() {
       {/* Luminescence d'arrière-plan */}
       <div className="fixed top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-indigo-600/10 rounded-full blur-[140px] pointer-events-none -z-10" />
 
-      <main className="space-y-6 pb-16">
+      <main className="space-y-12 pb-16 relative z-10">
         <HeroBento />
-        <ProjectsBento />
+        <ProjectsShowcase />
         <ContactSection />
       </main>
 
-      <footer className="border-t border-white/5 py-8 text-center text-xs text-gray-500">
+      <footer className="border-t border-white/5 py-8 text-center text-xs text-gray-500 relative z-10">
         <p>© 2026 Allan Walker. Tous droits réservés.</p>
       </footer>
     </div>

@@ -16,32 +16,31 @@ export default function CodeBackground() {
     resizeCanvas()
     window.addEventListener('resize', resizeCanvas)
 
-    const codeSnippets = [
-      'const smartAutomator = async () => { await gemini.generate(); }',
-      'import React, { useState, useEffect } from "react"',
-      'function optimizePipeline(data) { return data.filter(Boolean); }',
-      'git commit -m "feat: deploy automated content distribution"',
-      'export default async function handler(req, res) { res.status(200); }',
-      'const bentoLayout = { grid: "responsive", theme: "dark" };',
-      'python3 -m venv env && source env/bin/activate',
-      'npm run build && vite deploy --prod'
-    ]
-
-    const fontSize = 12
-    const columns = Math.floor(canvas.width / 25)
+    const characters = '01{}[]<>/=+$#@!%&?*python_import_react_const_async_await_gemini_api'
+    const fontSize = 14
+    const columns = Math.floor(canvas.width / fontSize)
     const drops = Array(columns).fill(1)
 
     const draw = () => {
-      ctx.fillStyle = 'rgba(11, 12, 16, 0.15)'
+      // Effet d'estompage progressif
+      ctx.fillStyle = 'rgba(9, 10, 15, 0.12)'
       ctx.fillRect(0, 0, canvas.width, canvas.height)
 
-      ctx.fillStyle = 'rgba(99, 102, 241, 0.18)' // Indigo translucide
       ctx.font = `${fontSize}px monospace`
 
       for (let i = 0; i < drops.length; i++) {
-        const text = codeSnippets[i % codeSnippets.length]
-        const char = text[Math.floor(Math.random() * text.length)]
-        ctx.fillText(char, i * 25, drops[i] * fontSize)
+        const text = characters.charAt(Math.floor(Math.random() * characters.length))
+        
+        // Couleur alternée indigo / violet / émeraude
+        if (i % 5 === 0) {
+          ctx.fillStyle = '#818cf8' // Indigo vif
+        } else if (i % 3 === 0) {
+          ctx.fillStyle = '#c084fc' // Purple
+        } else {
+          ctx.fillStyle = '#34d399' // Emerald
+        }
+
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize)
 
         if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
           drops[i] = 0
@@ -62,7 +61,7 @@ export default function CodeBackground() {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 pointer-events-none -z-20 opacity-40"
+      className="fixed inset-0 pointer-events-none z-0 opacity-25"
     />
   )
 }
