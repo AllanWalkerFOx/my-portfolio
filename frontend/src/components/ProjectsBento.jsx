@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Cpu, X, ArrowUpRight, CheckCircle2, ExternalLink } from 'lucide-react'
 import SpotlightCard from './SpotlightCard'
 
-const projects = [
+const defaultProjects = [
   {
     id: 'smartcontent-automator',
     title: 'SmartContent-Automator',
@@ -60,12 +60,28 @@ const projects = [
 ]
 
 export default function ProjectsBento() {
+  const [projects, setProjects] = useState(defaultProjects)
   const [selectedProject, setSelectedProject] = useState(null)
+
+  useEffect(() => {
+    fetch('http://127.0.0.1:8000/api/projects')
+      .then((res) => {
+        if (!res.ok) throw new Error('API indisponible')
+        return res.json()
+      })
+      .then((data) => {
+        if (Array.isArray(data) && data.length > 0) {
+          setProjects(data)
+        }
+      })
+      .catch((err) => {
+        console.warn('Utilisation des données locales de secours :', err)
+      })
+  }, [])
 
   return (
     <section id="projects" className="max-w-6xl mx-auto px-4 py-20 space-y-12 relative z-10">
       
-      {/* En-tête de section */}
       <motion.div 
         initial={{ opacity: 0, y: 60 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -86,11 +102,10 @@ export default function ProjectsBento() {
         </p>
       </motion.div>
 
-      {/* Grille Bento des projets avec animation d'aspiration */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {projects.map((project, idx) => (
           <motion.div
-            key={project.id}
+            key={project.id || project.slug || idx}
             initial={{ opacity: 0, y: 80, scale: 0.9 }}
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
             viewport={{ once: true, margin: '-40px' }}
@@ -122,9 +137,8 @@ export default function ProjectsBento() {
                   </p>
                 </div>
 
-                {/* Métriques / Badges */}
                 <div className="grid grid-cols-3 gap-3 pt-2">
-                  {project.metrics.map((m, i) => (
+                  {project.metrics?.map((m, i) => (
                     <div key={i} className="bg-white/5 p-2.5 rounded-2xl border border-white/5 text-center">
                       <p className="text-[10px] text-gray-400 uppercase font-mono">{m.label}</p>
                       <p className="text-xs font-bold text-indigo-300 mt-0.5">{m.value}</p>
@@ -133,10 +147,9 @@ export default function ProjectsBento() {
                 </div>
               </div>
 
-              {/* Tags & GitHub */}
               <div className="pt-6 flex flex-wrap items-center justify-between gap-3 border-t border-white/5 mt-6">
                 <div className="flex flex-wrap gap-1.5">
-                  {project.tags.map((tag) => (
+                  {project.tags?.map((tag) => (
                     <span
                       key={tag}
                       className="px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-[11px] font-medium text-indigo-300"
@@ -164,7 +177,6 @@ export default function ProjectsBento() {
         ))}
       </div>
 
-      {/* Pop-up Modale Projet */}
       <AnimatePresence>
         {selectedProject && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-lg">
