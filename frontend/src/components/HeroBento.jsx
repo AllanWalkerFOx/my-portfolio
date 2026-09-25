@@ -117,13 +117,14 @@ export default function HeroBento() {
 
   const lmContent = `Madame, Monsieur,
 
-Récemment diplômé d'une Licence en Informatique, c'est avec un grand enthousiasme que je vous adresse ma candidature pour intégrer votre équipe en tant que Développeur Full-Stack / Back-End.
+Récemment diplômé d'une Licence en Informatique à ESMIA Innovation, c'est avec un grand enthousiasme que je vous adresse ma candidature pour intégrer votre équipe en tant que Développeur Full-Stack / Back-End.
 
-Passionné par la conception de solutions logicielles performantes et l'automatisation, j'ai pu acquérir une expérience pratique solide lors de mes précédents stages :
+Passionné par la conception de solutions logicielles performantes et l'automatisation, j'ai pu acquérir une expérience pratique solide lors de mes précédents stages et projets :
 - Chez RandevTeam : Conception et développement back-end avec le framework Laravel.
 - Chez Socobis : Stage d'intégration axé sur l'automatisation des flux de données.
+- Projets personnels : Intégration de solutions e-commerce (Shopify) et configuration de passerelles de paiement (Google Pay, PayPal).
 
-Mon parcours académique et mes projets personnels m'ont permis de maîtriser des technologies variées telles que Python, PHP, JavaScript, React et Odoo. Rigoureux, curieux et autonome, je m'adapte rapidement aux nouveaux environnements techniques.
+Mon parcours académique et mes projets m'ont permis de maîtriser des technologies variées telles que Python, PHP, JavaScript, React et Odoo. Rigoureux, curieux et autonome, je m'adapte rapidement aux nouveaux environnements techniques.
 
 Je reste à votre entière disposition pour un entretien afin de vous exposer plus en détail mon parcours et mes motivations.
 
@@ -224,11 +225,9 @@ Tonni-Allan RAKOTONDRAJAONA`
         transition={{ duration: 0.6 }}
         className="bg-[#12141d]/80 backdrop-blur-2xl border border-white/10 rounded-3xl p-6 sm:p-10 relative overflow-hidden flex flex-col justify-between shadow-2xl group min-h-[500px]"
       >
-        {/* Lueur d'ambiance néon */}
         <div className="absolute -top-24 -right-24 w-96 h-96 bg-indigo-500/15 rounded-full blur-3xl group-hover:bg-indigo-500/25 transition-all duration-700 pointer-events-none" />
 
         <div className="relative z-10">
-          {/* Badges d'en-tête */}
           <div className="flex flex-wrap items-center justify-between gap-3 mb-8">
             <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
@@ -241,10 +240,7 @@ Tonni-Allan RAKOTONDRAJAONA`
             </div>
           </div>
 
-          {/* Section Titre + Photo plaquée/ancrée */}
           <div className="grid grid-cols-1 md:grid-cols-12 items-end gap-6 mb-8 relative">
-            
-            {/* Titre */}
             <div className="md:col-span-7 lg:col-span-8 z-10 pb-4">
               <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight">
                 Bonjour ! <br />
@@ -254,7 +250,6 @@ Tonni-Allan RAKOTONDRAJAONA`
               </h1>
             </div>
 
-            {/* Photo parfaitement ancrée et occupant la hauteur de la section */}
             <div className="md:col-span-5 lg:col-span-4 relative flex justify-end items-end h-full min-h-[220px] md:min-h-[280px]">
               <div className="absolute inset-0 bg-gradient-to-t from-indigo-600/30 via-purple-500/10 to-transparent blur-3xl rounded-full pointer-events-none" />
               <img
@@ -263,10 +258,8 @@ Tonni-Allan RAKOTONDRAJAONA`
                 className="w-full h-full max-h-[320px] md:max-h-[380px] object-contain object-bottom drop-shadow-[0_20px_35px_rgba(79,70,229,0.45)] pointer-events-none select-none transition-transform duration-500 group-hover:scale-105"
               />
             </div>
-
           </div>
 
-          {/* Zone de Description (Prend toute la largeur) */}
           <div className="p-5 sm:p-6 rounded-2xl bg-white/[0.03] border border-white/5 flex items-start gap-4 my-6">
             <Sparkles size={20} className="text-amber-400 shrink-0 mt-1 animate-bounce" />
             <p className="text-xs sm:text-sm font-mono text-gray-300 leading-relaxed whitespace-pre-line w-full">
@@ -276,7 +269,6 @@ Tonni-Allan RAKOTONDRAJAONA`
           </div>
         </div>
 
-        {/* Boutons d'action */}
         <div className="pt-6 flex flex-wrap items-center gap-3 border-t border-white/5 relative z-10">
           <button
             onClick={() => setIsContactOpen(true)}
@@ -303,11 +295,7 @@ Tonni-Allan RAKOTONDRAJAONA`
         </div>
       </motion.div>
 
-      {/* NOUVEAU : bandeau défilant des technologies */}
-      <Marquee />
-
       {/* --- SUITE DE LA PAGE : NOUVELLES SECTIONS PORTFOLIO --- */}
-
       <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
 
         {/* Section Expériences & Stages (8 Cols) */}
@@ -320,10 +308,10 @@ Tonni-Allan RAKOTONDRAJAONA`
         >
           <div className="flex items-center gap-3 mb-6">
             <Briefcase className="text-indigo-400" size={22} />
-            <h2 className="text-xl font-bold text-white">Expériences Professionnelles</h2>
+            <h2 className="text-xl font-bold text-white">Expériences & Projets</h2>
           </div>
 
-          <div className="space-y-6">
+          <div className="space-y-4">
             <div className="p-4 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-indigo-500/30 transition-colors">
               <div className="flex justify-between items-start flex-wrap gap-2 mb-2">
                 <h3 className="text-white font-semibold text-base">Développeur Back-End Laravel</h3>
@@ -341,6 +329,16 @@ Tonni-Allan RAKOTONDRAJAONA`
               </div>
               <p className="text-xs text-gray-400 leading-relaxed">
                 Mise en place de scripts d'automatisation des flux de données et intégration de processus internes pour optimiser la productivité des équipes.
+              </p>
+            </div>
+
+            <div className="p-4 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-pink-500/30 transition-colors">
+              <div className="flex justify-between items-start flex-wrap gap-2 mb-2">
+                <h3 className="text-white font-semibold text-base">Projet Web & E-commerce</h3>
+                <span className="text-xs font-mono text-pink-400 bg-pink-500/10 px-2.5 py-1 rounded-full border border-pink-500/20">Shopify & APIs</span>
+              </div>
+              <p className="text-xs text-gray-400 leading-relaxed">
+                Déploiement et configuration complète de boutiques en ligne sur Shopify. Intégration technique des moyens de paiements sécurisés (Google Pay, PayPal Business).
               </p>
             </div>
           </div>
@@ -361,8 +359,9 @@ Tonni-Allan RAKOTONDRAJAONA`
             </div>
 
             <div className="p-4 rounded-2xl bg-white/[0.02] border border-white/5 mb-6">
-              <h3 className="text-white font-semibold text-sm mb-1">Licence en Informatique</h3>
-              <p className="text-xs text-gray-400">Option Risque et Décision (IRD)</p>
+              <h3 className="text-white font-semibold text-sm mb-1">Licence L3 Informatique</h3>
+              <p className="text-xs text-indigo-300 font-mono mb-1">Option Risque et Décision (IRD)</p>
+              <p className="text-xs text-gray-400">ESMIA Innovation</p>
             </div>
 
             <div className="flex items-center gap-3 mb-4">
@@ -372,7 +371,7 @@ Tonni-Allan RAKOTONDRAJAONA`
 
             <div className="flex flex-wrap gap-2">
               {['Laravel', 'Python', 'Odoo', 'PHP', 'JavaScript', 'React', 'TailwindCSS', 'MySQL', 'Git'].map((tech) => (
-                <span key={tech} className="text-xs font-mono bg-white/5 border border-white/10 text-gray-300 px-3 py-1.5 rounded-xl">
+                <span key={tech} className="text-xs font-mono bg-white/5 border border-white/10 text-gray-300 px-3 py-1.5 rounded-xl hover:bg-white/10 transition-colors cursor-default">
                   {tech}
                 </span>
               ))}
@@ -382,7 +381,7 @@ Tonni-Allan RAKOTONDRAJAONA`
 
       </div>
 
-      {/* NOUVEAU : section split — texte à gauche, photo à droite */}
+      {/* Section Split — Texte à gauche, photo à droite */}
       <section className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center bg-[#12141d]/70 backdrop-blur-2xl border border-white/10 rounded-3xl p-6 sm:p-12 overflow-hidden">
         <motion.div
           initial={{ opacity: 0, x: -40 }}
@@ -400,7 +399,7 @@ Tonni-Allan RAKOTONDRAJAONA`
             Back-end Laravel, automatisation de flux, intégration Odoo : j'aime construire ce qui fait gagner du temps aux équipes, et le faire proprement.
           </p>
           <div className="grid grid-cols-3 gap-4 max-w-md">
-            {[['2', 'stages réalisés'], ['9', 'technologies'], ['1', 'licence en informatique']].map(([n, l]) => (
+            {[['2', 'stages réalisés'], ['+10', 'projets & tests'], ['1', 'licence en informatique']].map(([n, l]) => (
               <div key={l} className="border-l border-white/15 pl-3">
                 <div className="text-3xl font-black text-white">{n}</div>
                 <div className="text-xs text-gray-400 leading-snug">{l}</div>
@@ -425,14 +424,15 @@ Tonni-Allan RAKOTONDRAJAONA`
         </motion.div>
       </section>
 
-      {/* NOUVEAU : parcours en frise alternée (gauche / droite) */}
+      {/* Parcours en frise alternée (gauche / droite) */}
       <section className="relative">
         <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight mb-10 text-center">Mon parcours</h2>
         <div className="absolute left-4 md:left-1/2 top-24 bottom-0 w-px bg-gradient-to-b from-indigo-500/60 via-purple-500/40 to-transparent" />
         {[
-          { t: 'Licence en Informatique', s: 'Option Risque et Décision (IRD)', d: 'Bases solides en algorithmique, bases de données et développement.', c: 'bg-indigo-400 ring-indigo-500/20' },
-          { t: 'Stage : Développeur Back-End Laravel', s: 'RandevTeam', d: 'APIs RESTful, bases de données et architectures back-end.', c: 'bg-purple-400 ring-purple-500/20' },
-          { t: "Stage : Intégration & Automatisation", s: 'Socobis', d: 'Automatisation des flux de données et intégration de processus internes.', c: 'bg-pink-400 ring-pink-500/20' },
+          { t: 'Licence L3 Informatique (IRD)', s: 'ESMIA Innovation', d: 'Bases solides en algorithmique, bases de données, décisionnel et développement web.', c: 'bg-indigo-400 ring-indigo-500/20' },
+          { t: 'Stage : Développeur Back-End', s: 'RandevTeam', d: 'Architecture, APIs RESTful, bases de données sous le framework Laravel.', c: 'bg-purple-400 ring-purple-500/20' },
+          { t: "Stage : Intégration & Automatisation", s: 'Socobis', d: 'Automatisation des flux de données et intégration de processus métiers internes.', c: 'bg-pink-400 ring-pink-500/20' },
+          { t: "Projets E-commerce & Web", s: 'Shopify, PayPal, Tests Ibonia', d: 'Déploiement de boutiques, configuration des paiements et validations techniques en conditions réelles.', c: 'bg-emerald-400 ring-emerald-500/20' }
         ].map((e, i) => (
           <motion.div
             key={e.t}
@@ -452,7 +452,7 @@ Tonni-Allan RAKOTONDRAJAONA`
         ))}
       </section>
 
-      {/* NOUVEAU : grand appel à l'action final */}
+      {/* Grand appel à l'action final */}
       <motion.section
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -471,7 +471,7 @@ Tonni-Allan RAKOTONDRAJAONA`
           <Send size={16} /> Me contacter <ExternalLink size={14} />
         </button>
       </motion.section>
-
+      <Marquee />
     </header>
   )
 }

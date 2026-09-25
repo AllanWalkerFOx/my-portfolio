@@ -20,7 +20,7 @@ export default function App() {
       </main>
 
       <footer className="border-t border-white/5 py-8 text-center text-xs text-gray-500 relative z-10">
-        <p>© 2026 Allan Walker. Tous droits réservés.</p>
+        <p>© 2026 Tonni-Allan. Tous droits réservés.</p>
       </footer>
     </div>
   )
